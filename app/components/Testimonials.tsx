@@ -23,7 +23,7 @@ export default async function Testimonials() {
             <span className="w-6 h-0.5 bg-cbi-yellow inline-block rounded-full" /> Voices From the Field
           </p>
           <h2 className="text-3xl sm:text-4xl font-black text-slate-900">
-            Our Valuable <span className="text-cbi-blue italic">Awesome</span> Feedback
+            What <span className="text-cbi-blue italic">Communities</span> Are Saying
           </h2>
           <p className="mt-4 text-slate-500 max-w-md mx-auto text-sm leading-relaxed">
             Real stories from communities we serve — the most powerful measure of our impact.

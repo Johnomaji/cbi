@@ -1,13 +1,18 @@
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Mail, Users } from "lucide-react";
 import { FaLinkedin } from "react-icons/fa6";
 import type { TeamMember } from "@/lib/data";
 
-const avatarColors = [
-  { bg: "bg-blue-600",   ring: "ring-blue-200" },
-  { bg: "bg-indigo-600", ring: "ring-indigo-200" },
-  { bg: "bg-teal-600",   ring: "ring-teal-200" },
+const gradients = [
+  { from: "#1d4ed8", to: "#1e3a8a" },
+  { from: "#4338ca", to: "#3730a3" },
+  { from: "#0f766e", to: "#115e59" },
 ];
+
+function getImagePath(name: string) {
+  return `/${name.split(" ")[0].toLowerCase()}.jpg`;
+}
 
 export default function TeamPreview({ members }: { members: TeamMember[] }) {
   const sorted = [...members].sort((a, b) => a.order - b.order).slice(0, 3);
@@ -32,32 +37,29 @@ export default function TeamPreview({ members }: { members: TeamMember[] }) {
         {/* Team cards */}
         <div className="grid md:grid-cols-3 gap-8">
           {sorted.map((member, i) => {
-            const color = avatarColors[i % avatarColors.length];
+            const g = gradients[i % gradients.length];
             return (
               <div key={member.id}
                 className="group bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 overflow-hidden text-center relative">
 
-                {/* Card top colour strip */}
-                <div className="h-24 bg-slate-50 relative">
-                  <div className="absolute inset-0 opacity-20" style={{
-                    backgroundImage: "radial-gradient(circle at 50% 100%, #1d4ed8, transparent 60%)"
-                  }} />
-                  {/* Decorative heart */}
-                  <div className="absolute top-4 right-4 w-8 h-8 rounded-full bg-white/60 flex items-center justify-center">
-                    <svg className="w-4 h-4 text-slate-300" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
-                    </svg>
-                  </div>
+                {/* Photo zone */}
+                <div
+                  className="relative h-52 overflow-hidden flex-shrink-0"
+                  style={{ background: `linear-gradient(160deg, ${g.from} 0%, ${g.to} 100%)` }}
+                >
+                  <span className="absolute text-[6rem] font-black text-white/10 select-none leading-none top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none">
+                    {member.initials[0]}
+                  </span>
+                  <Image
+                    src={getImagePath(member.name)}
+                    alt={member.name}
+                    fill
+                    className="object-cover object-top"
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                  />
                 </div>
 
-                {/* Avatar circle — overlaps the strip */}
-                <div className="flex justify-center -mt-10 mb-4 relative z-10">
-                  <div className={`w-20 h-20 rounded-full ${color.bg} ${color.ring} ring-4 flex items-center justify-center text-white font-black text-xl shadow-md`}>
-                    {member.initials}
-                  </div>
-                </div>
-
-                <div className="px-6 pb-7">
+                <div className="px-6 pb-7 pt-5">
                   <h3 className="font-black text-slate-900 text-lg">{member.name}</h3>
                   <p className="text-cbi-blue text-sm font-semibold mt-1">{member.title}</p>
 

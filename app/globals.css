@@ -78,6 +78,23 @@ body {
 .animate-marquee:hover {
   animation-play-state: paused;
 }
+@media (max-width: 768px) {
+  .animate-marquee {
+    animation-duration: 7s;
+  }
+}
+
+/* ── Partner logos marquee ───────────────────────────────── */
+@keyframes logo-scroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.animate-logo-scroll {
+  animation: logo-scroll 28s linear infinite;
+}
+.animate-logo-scroll:hover {
+  animation-play-state: paused;
+}
 
 /* ── Dark mode overrides ─────────────────────────────────────
    .dark + utility class has higher specificity (0,2,0) than a

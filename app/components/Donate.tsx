@@ -38,8 +38,8 @@ export default function Donate() {
               Donate &amp; Support
             </p>
             <h2 className="text-4xl sm:text-5xl font-black text-white leading-tight">
-              Donate <span className="text-cbi-yellow italic">Support</span> To Make<br />
-              Difference Way
+              Your Donation Makes a<br />
+              Real <span className="text-cbi-yellow italic">Difference</span>
             </h2>
             <p className="mt-5 text-blue-200 text-base leading-relaxed max-w-md">
               Every donation to Care Best Initiative goes directly to lifesaving programs —
@@ -60,7 +60,7 @@ export default function Donate() {
             <div className="mt-8 flex flex-wrap gap-3">
               {tiers.map((t) => (
                 <Link key={t.amount}
-                  href={`mailto:donate@cbi.ngo?subject=Donation ${t.amount}`}
+                  href="/donate"
                   className="border border-white/20 px-5 py-3 text-white hover:border-cbi-yellow hover:bg-cbi-yellow/10 transition-all rounded-xl cursor-pointer group">
                   <div className="font-black text-lg text-cbi-yellow">{t.amount}</div>
                   <div className="text-blue-300 text-xs mt-0.5 group-hover:text-white transition-colors">{t.label}</div>

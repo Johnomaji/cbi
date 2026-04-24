@@ -41,12 +41,13 @@ export default function Team({ members }: { members: TeamMember[] }) {
             const g = gradients[index % gradients.length];
             const imgSrc = getImagePath(member.name);
             return (
-              <div key={member.id} className="group relative bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 overflow-hidden flex flex-col">
-                <Link href={`/team/${member.id}`} className="absolute inset-0 z-0" aria-label={`View ${member.name}'s profile`} />
+              <div key={member.id} className="group bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 overflow-hidden flex flex-col">
 
-                {/* Image zone */}
-                <div
-                  className="relative h-52 flex-shrink-0 overflow-hidden"
+                {/* Image zone — the whole photo area is the primary card link */}
+                <Link
+                  href={`/team/${member.id}`}
+                  className="relative block h-52 flex-shrink-0 overflow-hidden"
+                  aria-label={`View ${member.name}'s profile`}
                   style={{ background: `linear-gradient(160deg, ${g.from} 0%, ${g.to} 100%)` }}
                 >
                   <span className="absolute text-[8rem] font-black text-white/10 select-none leading-none top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none">
@@ -61,14 +62,14 @@ export default function Team({ members }: { members: TeamMember[] }) {
                     className="object-cover object-top"
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                   />
-                </div>
+                </Link>
 
                 {/* Content strip */}
                 <div className="p-5 flex flex-col flex-1 text-center">
                   <h3 className="font-black text-slate-900 text-base leading-tight">{member.name}</h3>
                   <p className="text-cbi-blue text-xs font-semibold mt-1">{member.title}</p>
 
-                  <div className="relative z-10 mt-4 flex items-center justify-center gap-2">
+                  <div className="mt-4 flex items-center justify-center gap-2">
                     <a href={`mailto:${member.email}`} aria-label="Email"
                       className="w-8 h-8 rounded-full border border-slate-200 flex items-center justify-center text-slate-400 hover:border-cbi-blue hover:text-cbi-blue transition-colors">
                       <Mail className="w-3.5 h-3.5" />
@@ -77,9 +78,10 @@ export default function Team({ members }: { members: TeamMember[] }) {
                       className="w-8 h-8 rounded-full border border-slate-200 flex items-center justify-center text-slate-400 hover:border-blue-600 hover:text-blue-600 transition-colors">
                       <FaLinkedin className="w-3.5 h-3.5" />
                     </a>
-                    <span className="ml-2 inline-flex items-center gap-1.5 px-4 py-1.5 bg-cbi-yellow text-slate-900 text-xs font-bold rounded-full group-hover:bg-cbi-yellow-dark transition-colors whitespace-nowrap">
+                    <Link href={`/team/${member.id}`}
+                      className="ml-2 inline-flex items-center gap-1.5 px-4 py-1.5 bg-cbi-yellow text-slate-900 text-xs font-bold rounded-full hover:bg-cbi-yellow-dark transition-colors whitespace-nowrap">
                       View Profile <ArrowRight className="w-3 h-3" />
-                    </span>
+                    </Link>
                   </div>
                 </div>
               </div>

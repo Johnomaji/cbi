@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 import { Menu, X, ChevronDown, Heart } from "lucide-react";
 import ThemeToggle from "./ThemeToggle";
@@ -50,12 +51,10 @@ export default function Navbar() {
 
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 flex-shrink-0">
-            <div className="w-10 h-10 bg-cbi-blue rounded-full flex items-center justify-center">
-              <span className="text-white font-black text-xs">CBI</span>
-            </div>
+            <Image src="/Care-Best-3.jpg" alt="Care Best Initiative" width={140} height={140} className="rounded-full object-cover" />
             <div>
-              <div className="font-black text-slate-900 text-base leading-tight">Care Best Initiative</div>
-              <div className="text-xs text-slate-400 leading-tight">Delivering Lifesaving Care</div>
+              {/* <div className="font-black text-slate-900 text-base leading-tight">Care Best Initiative</div>
+              <div className="text-xs text-slate-400 leading-tight">Delivering Lifesaving Care</div> */}
             </div>
           </Link>
 

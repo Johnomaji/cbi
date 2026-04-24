@@ -1,6 +1,51 @@
 [
-  { "id": "1", "year": "2019", "title": "CBI Founded", "desc": "Established in Abuja with a mission to deliver integrated humanitarian care across Nigeria's most vulnerable regions.", "order": 1 },
-  { "id": "2", "year": "2020", "title": "First Field Operations", "desc": "Launched in Borno & Adamawa states — emergency nutrition and primary healthcare for over 5,000 beneficiaries.", "order": 2 },
-  { "id": "3", "year": "2021–22", "title": "WASH & Education Scale-Up", "desc": "Rehabilitated 80+ boreholes. Education in Emergency program enrolled 6,000+ out-of-school children.", "order": 3 },
-  { "id": "4", "year": "2023+", "title": "Gongonlong School Story", "desc": "Transformed Gongonlong Primary School — restoring safe learning for 900+ displaced children.", "order": 4 }
+  {
+    "id": "1",
+    "year": "2019",
+    "title": "Founded",
+    "desc": "Care Best Initiative was founded in November 2019 by a dedicated team of 7, launching the 'Stand Against Rape: Say No to Violence and Silence (GBV)' project — impacting over 500 youths and adults in Northeast Nigeria through awareness campaigns and medical assistance to survivors.",
+    "order": 1
+  },
+  {
+    "id": "2",
+    "year": "2020",
+    "title": "Nutrition Scale-Up",
+    "desc": "CBI expanded into the NUTRITION project in Borno State, delivering integrated Preventive and Curative Nutrition Services to over 25,000 individuals. Also led General Food Distribution, COVID-19 Prevention, and GBV Dignity Kit distribution for IDPs during the post-insurgency recovery period.",
+    "order": 2
+  },
+  {
+    "id": "3",
+    "year": "2021",
+    "title": "New Partnerships",
+    "desc": "Significant growth reaching over 100,000 individuals. Partnered with UNICEF for Basic and Maternal Health and Nutrition Services, launched Cholera Prevention with the WASH Sector of Nigeria, and distributed Hygiene Kits to over 20,000 households in IDP Camps in collaboration with Unilever.",
+    "order": 3
+  },
+  {
+    "id": "4",
+    "year": "2022",
+    "title": "Broadened Impact",
+    "desc": "Extended reach to over 150,000 individuals across multiple Northern states. Partnerships with UNICEF, EU/British Council, and UN-OCHA Nigeria Humanitarian Fund enabled CBI to address acute malnutrition, deliver emergency WASH services, and enhance primary healthcare in conflict-affected areas.",
+    "order": 4
+  },
+  {
+    "id": "5",
+    "year": "2023",
+    "title": "Humanitarian Commitment",
+    "desc": "Partnered with UNICEF/Solidarites International for life-saving WASH assistance across Borno, Adamawa, and Yobe States. Collaborated with ZOA International and Nigeria Women Trust Fund to provide education for out-of-school children and run GBV prevention and anti-trafficking campaigns.",
+    "order": 5
+  },
+  {
+    "id": "6",
+    "year": "2024",
+    "title": "Girl-Child Empowerment",
+    "desc": "Launched School-Based Learning Engagement and Girl-Child Empowerment programs across communities — creating safe, inclusive learning spaces for children and adolescents, strengthening student voice, and promoting leadership and communication skills, with a strong focus on girl-child education.",
+    "order": 6
+  },
+  {
+    "id": "7",
+    "year": "2025",
+    "title": "Community Health Outreach",
+    "desc": "Delivered Community Medical Outreach and Primary Healthcare Support at grassroots level — providing essential medicines and basic treatment to vulnerable and hard-to-reach populations, empowering women and community health workers to lead outreach services and strengthen local response capacity.",
+    "order": 7
+  }
 ]

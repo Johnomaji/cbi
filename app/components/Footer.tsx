@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Mail, MapPin, ArrowRight } from "lucide-react";
 import { FaFacebook, FaXTwitter, FaLinkedin, FaInstagram, FaYoutube } from "react-icons/fa6";
 import { getSiteSettings } from "@/lib/data";
@@ -20,12 +21,10 @@ export default async function Footer() {
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
           <div>
             <Link href="/" className="flex items-center gap-2 mb-5">
-              <div className="w-10 h-10 bg-cbi-blue rounded-full flex items-center justify-center">
-                <span className="text-white font-bold">CBI</span>
-              </div>
+              <Image src="/Care-Best-3.jpg" alt="Care Best Initiative" width={140} height={140} className="rounded-full object-cover" />
               <div>
-                <div className="text-white font-bold">Care Best Initiative</div>
-                <div className="text-slate-500 text-xs">Delivering Lifesaving Care</div>
+                {/* <div className="text-white font-bold">Care Best Initiative</div>
+                <div className="text-slate-500 text-xs">Delivering Lifesaving Care</div> */}
               </div>
             </Link>
             <p className="text-sm leading-relaxed mb-5">A National NGO established in 2019, delivering integrated humanitarian programs across Nigeria&apos;s North-East and North-West regions.</p>

@@ -1,6 +1,16 @@
 import PageLayout from "@/app/components/PageLayout";
 import { getSiteSettings } from "@/lib/data";
 import { Mail, Phone, MapPin, ArrowRight, MessageSquare, Clock } from "lucide-react";
+
+const offices = [
+  { name: "CBI Head Office",     location: "Abuja",     address: "No. 139, Aero Gardens Estate, Kyami, Airport Road, Abuja",                                              email: "admin@cbi.ngo",    phone: "+234(0)9153493317", isHQ: true  },
+  { name: "Borno State Office",  location: "Maiduguri", address: "Behind UN House, Pompomari By-pass, Maiduguri",                                                         email: "borno@cbi.ngo",    phone: "+234(0)9154692357", isHQ: false },
+  { name: "Adamawa State Office",location: "Yola",      address: "No. 6, Opposite Dunamis Church, Bature, Yola North",                                                    email: "adamawa@cbi.ngo",  phone: "+234(0)9154692360", isHQ: false },
+  { name: "Yobe State Office",   location: "Damaturu",  address: "Muhammad Buhari Way, Don-Etiebet Extension, Behind Mai Riga's House, Damaturu",                        email: "yobe@cbi.ngo",     phone: "+234(0)9154692355", isHQ: false },
+  { name: "Bauchi State Office", location: "Bauchi",    address: "No.12 Dass Park, Behind Larema Hotel, Opp. Christ Embassy Church, New GRA, Bauchi",                   email: "bauchi@cbi.ngo",   phone: "+234(0)9154692348", isHQ: false },
+  { name: "Zamfara State Office",location: "Gusau",     address: "White House, Behind Governor's House, GRA, Gusau",                                                     email: "zamfara@cbi.ngo",  phone: "+234(0)9153493300", isHQ: false },
+  { name: "Sokoto State Office", location: "Sokoto",    address: "No. 31, Alero Road, Opposite Magistrate Court, Runji Sambo",                                           email: "sokoto@cbi.ngo",   phone: "+234(0)9153493344", isHQ: false },
+];
 import { FaFacebook, FaXTwitter, FaLinkedin, FaInstagram } from "react-icons/fa6";
 
 export const metadata = { title: "Contact Us | Care Best Initiative" };
@@ -155,13 +165,57 @@ export default async function ContactPage() {
         </div>
       </div>
 
+      {/* Offices grid */}
+      <div className="bg-white py-16">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-10">
+            <span className="text-cbi-yellow font-semibold text-sm uppercase tracking-widest">Presence</span>
+            <h2 className="mt-3 text-3xl font-black text-slate-900">Our Offices</h2>
+            <p className="mt-4 text-slate-500 max-w-lg mx-auto leading-relaxed">
+              We operate from seven locations across Nigeria — reach out to the office nearest to you.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            {offices.map((office) => (
+              <div
+                key={office.name}
+                className={`rounded-2xl border p-6 flex flex-col gap-3 shadow-sm hover:shadow-md transition-all duration-300 ${
+                  office.isHQ ? "bg-cbi-blue border-cbi-blue" : "bg-white border-slate-100"
+                }`}
+              >
+                <div className="flex items-center gap-3">
+                  <div className={`w-9 h-9 rounded-full flex items-center justify-center flex-shrink-0 ${
+                    office.isHQ ? "bg-cbi-yellow/20" : "bg-blue-50"
+                  }`}>
+                    <MapPin className={`w-4 h-4 ${office.isHQ ? "text-cbi-yellow" : "text-cbi-blue"}`} />
+                  </div>
+                  <div>
+                    <h3 className={`font-black text-sm leading-tight ${office.isHQ ? "text-white" : "text-slate-900"}`}>{office.name}</h3>
+                    <p className={`text-xs font-semibold ${office.isHQ ? "text-cbi-yellow" : "text-cbi-blue"}`}>{office.location}</p>
+                  </div>
+                </div>
+                <p className={`text-xs leading-relaxed ${office.isHQ ? "text-blue-200" : "text-slate-500"}`}>{office.address}</p>
+                <div className={`space-y-1.5 pt-2 border-t ${office.isHQ ? "border-white/20" : "border-slate-100"}`}>
+                  <a href={`mailto:${office.email}`} className={`flex items-center gap-2 text-xs font-semibold hover:underline ${office.isHQ ? "text-cbi-yellow" : "text-cbi-blue"}`}>
+                    <Mail className="w-3 h-3 flex-shrink-0" />{office.email}
+                  </a>
+                  <a href={`tel:${office.phone.replace(/[^+\d]/g, "")}`} className={`flex items-center gap-2 text-xs ${office.isHQ ? "text-blue-200" : "text-slate-500"}`}>
+                    <Phone className="w-3 h-3 flex-shrink-0" />{office.phone}
+                  </a>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
       {/* Map / Location CTA */}
       <div className="bg-cbi-blue-dark py-12 relative overflow-hidden">
         <div className="absolute -top-16 -right-16 w-64 h-64 rounded-full bg-cbi-yellow/10 pointer-events-none" />
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-6">
           <div>
-            <p className="text-cbi-yellow font-semibold text-sm italic mb-1">Our Location</p>
-            <h3 className="text-xl font-black text-white">Visit Our Office</h3>
+            <p className="text-cbi-yellow font-semibold text-sm italic mb-1">Head Office</p>
+            <h3 className="text-xl font-black text-white">Visit Our Main Office</h3>
             <p className="text-blue-300 text-sm mt-1">{s.address}</p>
           </div>
           <a href={`https://maps.google.com/?q=${encodeURIComponent(s.address)}`} target="_blank" rel="noopener noreferrer"

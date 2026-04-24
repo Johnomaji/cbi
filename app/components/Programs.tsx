@@ -1,5 +1,6 @@
 import { ArrowRight, BookOpen, Heart, Droplets, ShieldCheck, Wheat, Apple, HandHeart, type LucideIcon } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 import { getPrograms } from "@/lib/data";
 
 const iconMap: Record<string, LucideIcon> = {
@@ -20,10 +21,10 @@ export default async function Programs() {
     .sort((a, b) => a.order - b.order);
 
   const causes = all.slice(0, 3);
-  const blobShapes = [
-    "rounded-[60%_40%_30%_70%/60%_30%_70%_40%]",
-    "rounded-[40%_60%_70%_30%/40%_50%_60%_50%]",
-    "rounded-[70%_30%_50%_50%/50%_40%_60%_50%]",
+  const featuredImages = [
+    "/IMG_9278-scaled.jpg",
+    "/IMG_8929-scaled.jpg",
+    "/IMG_9297-scaled.jpg",
   ];
 
   return (
@@ -47,16 +48,22 @@ export default async function Programs() {
               const Icon = iconMap[cause.icon] ?? HandHeart;
               const { color, bg } = colorMap[cause.icon] ?? { color: "text-cbi-blue", bg: "bg-blue-50" };
               return (
-                <div key={cause.id} className="flex flex-col items-center text-center group">
-                  <div className={`relative w-52 h-52 ${bg} ${blobShapes[idx % 3]} flex items-center justify-center mb-6 group-hover:scale-105 transition-transform duration-300 shadow-sm`}>
-                    <div className={`w-20 h-20 ${bg} rounded-full flex items-center justify-center`}>
-                      <Icon className={`w-9 h-9 ${color}`} />
+                <div key={cause.id} className="flex flex-col group">
+                  <div className="relative h-56 rounded-2xl overflow-hidden mb-5 shadow-sm">
+                    <Image
+                      src={featuredImages[idx]}
+                      alt={cause.title}
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform duration-500"
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent" />
+                    <div className={`absolute bottom-4 left-4 w-11 h-11 ${bg} rounded-xl flex items-center justify-center shadow-md`}>
+                      <Icon className={`w-5 h-5 ${color}`} />
                     </div>
-                    <div className="absolute top-4 right-4 w-3 h-3 rounded-full bg-cbi-yellow/50" />
-                    <div className="absolute bottom-6 left-4 w-2 h-2 rounded-full bg-cbi-blue/30" />
                   </div>
-                  <h3 className="text-lg font-black text-slate-900 mb-3">{cause.title}</h3>
-                  <p className="text-slate-500 text-sm leading-relaxed max-w-xs">{cause.description}</p>
+                  <h3 className="text-lg font-black text-slate-900 mb-2">{cause.title}</h3>
+                  <p className="text-slate-500 text-sm leading-relaxed">{cause.description}</p>
                 </div>
               );
             })}
