@@ -19,6 +19,15 @@ const logos = [
   { src: "/seal-1-922x1024.jpg.jpeg",                                            alt: "Partner" },
   { src: "/images-1.png",                                                        alt: "Partner" },
   { src: "/idd_wblhIS_1774447979092.jpeg",                                       alt: "Partner" },
+  { src: "/2.jpg",                                                               alt: "Partner" },
+  { src: "/3.jpg",                                                               alt: "Partner" },
+  { src: "/4.jpg",                                                               alt: "Partner" },
+  { src: "/5.jpg",                                                               alt: "Partner" },
+  { src: "/6.jpg",                                                               alt: "Partner" },
+  { src: "/7.jpg",                                                               alt: "Partner" },
+  { src: "/8.jpg",                                                               alt: "Partner" },
+  { src: "/9.jpg",                                                               alt: "Partner" },
+  { src: "/10.jpg",                                                              alt: "Partner" },
 ];
 
 const doubled = [...logos, ...logos];

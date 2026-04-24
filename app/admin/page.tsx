@@ -77,9 +77,6 @@ export default function AdminLoginPage() {
             </button>
           </form>
 
-          <p className="text-xs text-slate-600 text-center mt-5">
-            Default: <code className="font-mono text-slate-500">cbi@admin2024</code>
-          </p>
         </div>
       </div>
     </div>

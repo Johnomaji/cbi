@@ -25,7 +25,7 @@ export default function Donate() {
       {/* Background photo overlay */}
       <div
         className="absolute inset-0 bg-cover bg-center opacity-10"
-        style={{ backgroundImage: "url('https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=1400&q=80')" }}
+        style={{ backgroundImage: "url('/IMG_9253-scaled.jpg')" }}
       />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
