@@ -1,0 +1,10 @@
+[
+  { "id": "1", "name": "UNICEF", "logoUrl": "", "order": 1 },
+  { "id": "2", "name": "WHO", "logoUrl": "", "order": 2 },
+  { "id": "3", "name": "WFP", "logoUrl": "", "order": 3 },
+  { "id": "4", "name": "UNHCR", "logoUrl": "", "order": 4 },
+  { "id": "5", "name": "Save the Children", "logoUrl": "", "order": 5 },
+  { "id": "6", "name": "OCHA", "logoUrl": "", "order": 6 },
+  { "id": "7", "name": "IRC", "logoUrl": "", "order": 7 },
+  { "id": "8", "name": "Mercy Corps", "logoUrl": "", "order": 8 }
+]

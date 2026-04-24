@@ -1,0 +1,50 @@
+[
+  {
+    "id": "1",
+    "slug": "cbi-reaches-50000-beneficiaries",
+    "title": "CBI Reaches 50,000 Beneficiaries Milestone",
+    "excerpt": "Care Best Initiative celebrates a landmark achievement as our integrated programs have now touched the lives of over 50,000 individuals across 10 Nigerian states.",
+    "content": "Care Best Initiative is proud to announce that our programs have collectively reached over 50,000 beneficiaries across Nigeria's North-East and North-West regions. This milestone reflects years of dedicated work by our field teams, the trust of our partners, and the resilience of the communities we serve.\n\nSince our founding in 2019, we have deployed integrated programs spanning education in emergency, health, nutrition, WASH, protection, and food security. Each beneficiary represents a family strengthened, a child fed, a community empowered.\n\nWe remain committed to expanding our reach and deepening our impact in the years ahead.",
+    "category": "Impact",
+    "author": "Rejoice Mark",
+    "date": "2024-03-15",
+    "image": "/mark.webp",
+    "published": true
+  },
+  {
+    "id": "2",
+    "slug": "new-wash-program-yobe-state",
+    "title": "New WASH Program Launches in Yobe State",
+    "excerpt": "CBI has launched a comprehensive Water, Sanitation and Hygiene program across 12 communities in Yobe State, targeting 8,000 beneficiaries.",
+    "content": "CBI has officially launched its newest WASH program in Yobe State, targeting 12 communities and an estimated 8,000 direct beneficiaries. The program aims to rehabilitate 50 non-functional boreholes, construct 30 household latrines, and conduct hygiene promotion sessions in schools and community spaces.\n\nAccess to safe water is a fundamental right, yet thousands of families in Yobe State walk hours daily to collect water from unsafe sources. This program directly addresses that gap while building community ownership of water infrastructure for long-term sustainability.",
+    "category": "Programs",
+    "author": "Thomas Umazayi Dayo",
+    "date": "2024-02-20",
+    "image": "/thomas.webp",
+    "published": true
+  },
+  {
+    "id": "3",
+    "slug": "gongonlong-school-transformation",
+    "title": "Gongonlong Primary School: A Story of Resilience",
+    "excerpt": "After years of displacement, 900 children have returned to Gongonlong Primary School thanks to CBI's Education in Emergency program.",
+    "content": "The story of Gongonlong Primary School is one of remarkable community resilience. When conflict displaced thousands of families from their homes in 2020, children bore a silent burden — their education disrupted, their future uncertain.\n\nCBI's Education in Emergency team worked alongside community leaders, the State Universal Basic Education Board, and parent-teacher associations to restore the school. Today, over 900 children attend classes in rehabilitated learning spaces, equipped with textbooks, school supplies, and hygiene kits.\n\nFor many of these children, it is the first time they have received such support. For CBI, it is a reminder of why our work matters.",
+    "category": "Stories",
+    "author": "Isaiah Yakubu",
+    "date": "2024-01-10",
+    "image": "/isaiah.webp",
+    "published": true
+  },
+  {
+    "id": "4",
+    "slug": "nutrition-program-borno-state",
+    "title": "Tackling Malnutrition in Borno State",
+    "excerpt": "CBI's nutrition program has treated over 8,000 children for moderate and severe acute malnutrition in Borno State since 2021.",
+    "content": "Malnutrition remains one of the most urgent challenges facing communities in Nigeria's North-East. CBI's nutrition program deploys community-based screening, outpatient therapeutic care, and caregiver counseling to identify and treat children suffering from moderate and severe acute malnutrition.\n\nSince 2021, our nutrition teams in Borno State have screened over 45,000 children under five, treated 8,200+ cases of acute malnutrition, and trained 150 community nutrition volunteers. Recovery rates consistently exceed the SPHERE standard of 75%.",
+    "category": "Programs",
+    "author": "Sarauniya Esther Elbuba",
+    "date": "2023-11-05",
+    "image": "/sara.webp",
+    "published": true
+  }
+]

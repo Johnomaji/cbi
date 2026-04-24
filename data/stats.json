@@ -1,0 +1,12 @@
+{
+  "items": [
+    { "id": "1", "value": 50000, "suffix": "+", "label": "Beneficiaries Impacted", "icon": "Users" },
+    { "id": "2", "value": 120, "suffix": "+", "label": "Projects Completed", "icon": "CheckCircle" },
+    { "id": "3", "value": 10, "suffix": "", "label": "States Covered", "icon": "MapPin" },
+    { "id": "4", "value": 35, "suffix": "+", "label": "Partnerships", "icon": "Handshake" },
+    { "id": "5", "value": 500, "suffix": "+", "label": "Health Workers Trained", "icon": "Stethoscope" },
+    { "id": "6", "value": 8000, "suffix": "+", "label": "MAM & SAM Cases Treated", "icon": "HeartPulse" },
+    { "id": "7", "value": 15000, "suffix": "+", "label": "Out-of-School Children Reached", "icon": "BookOpen" },
+    { "id": "8", "value": 200, "suffix": "+", "label": "Boreholes / Latrines Rehabilitated", "icon": "Droplets" }
+  ]
+}

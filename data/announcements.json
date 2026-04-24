@@ -1,0 +1,30 @@
+[
+  {
+    "id": "1",
+    "text": "🎉 CBI has reached 50,000 beneficiaries across 10 states in Nigeria!",
+    "link": "/blog",
+    "linkText": "Read more",
+    "active": true
+  },
+  {
+    "id": "2",
+    "text": "📢 We are hiring! Join our team as a Field Officer in Borno State.",
+    "link": "/events",
+    "linkText": "Apply now",
+    "active": true
+  },
+  {
+    "id": "3",
+    "text": "🌍 CBI launches new WASH program in Yobe State — rehabilitating 50 boreholes.",
+    "link": "/blog",
+    "linkText": "Learn more",
+    "active": true
+  },
+  {
+    "id": "4",
+    "text": "❤️ Donate today and help us deliver lifesaving care where it's needed most.",
+    "link": "/#donate",
+    "linkText": "Donate now",
+    "active": true
+  }
+]

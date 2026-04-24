@@ -1,0 +1,6 @@
+[
+  { "id": "1", "year": "2019", "title": "CBI Founded", "desc": "Established in Abuja with a mission to deliver integrated humanitarian care across Nigeria's most vulnerable regions.", "order": 1 },
+  { "id": "2", "year": "2020", "title": "First Field Operations", "desc": "Launched in Borno & Adamawa states — emergency nutrition and primary healthcare for over 5,000 beneficiaries.", "order": 2 },
+  { "id": "3", "year": "2021–22", "title": "WASH & Education Scale-Up", "desc": "Rehabilitated 80+ boreholes. Education in Emergency program enrolled 6,000+ out-of-school children.", "order": 3 },
+  { "id": "4", "year": "2023+", "title": "Gongonlong School Story", "desc": "Transformed Gongonlong Primary School — restoring safe learning for 900+ displaced children.", "order": 4 }
+]

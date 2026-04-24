@@ -1,0 +1,11 @@
+[
+  { "id": "1", "name": "Rejoice Mark", "title": "Executive Director", "initials": "RM", "email": "rejoice@cbi.ngo", "bio": "Rejoice founded CBI in 2019 with a vision to deliver integrated humanitarian care to Nigeria's most vulnerable communities. She brings over 15 years of NGO leadership experience.", "order": 1 },
+  { "id": "2", "name": "Thomas Umazayi Dayo", "title": "Program Manager", "initials": "TU", "email": "thomas@cbi.ngo", "bio": "Thomas oversees CBI's program portfolio across all six thematic areas, ensuring quality delivery and alignment with humanitarian standards.", "order": 2 },
+  { "id": "3", "name": "Sarauniya Esther Elbuba", "title": "Human Resource Coordinator", "initials": "SE", "email": "sarauniya@cbi.ngo", "bio": "Sarauniya manages CBI's human resources, staff welfare, and organizational capacity development.", "order": 3 },
+  { "id": "4", "name": "Isaiah Yakubu", "title": "Program Coordinator", "initials": "IY", "email": "isaiah@cbi.ngo", "bio": "Isaiah coordinates field-level program implementation, community engagement, and partner liaison in the North-East region.", "order": 4 },
+  { "id": "5", "name": "Aisha Mohammed", "title": "MEAL Coordinator", "initials": "AM", "email": "aisha@cbi.ngo", "bio": "Aisha leads CBI's Monitoring, Evaluation, Accountability and Learning systems, ensuring evidence-based program improvements.", "order": 5 },
+  { "id": "6", "name": "Emmanuel Bello", "title": "Logistics Coordinator", "initials": "EB", "email": "emmanuel@cbi.ngo", "bio": "Emmanuel manages CBI's supply chain, fleet, and operational logistics across all field offices.", "order": 6 },
+  { "id": "7", "name": "Fatima Usman", "title": "Finance Coordinator", "initials": "FU", "email": "fatima@cbi.ngo", "bio": "Fatima oversees financial management, donor reporting, and compliance with CBI's financial policies.", "order": 7 },
+  { "id": "8", "name": "Daniel Okafor", "title": "ICT Coordinator", "initials": "DO", "email": "daniel@cbi.ngo", "bio": "Daniel manages CBI's digital infrastructure, data systems, and technology solutions for program delivery.", "order": 8 },
+  { "id": "9", "name": "Grace Adamu", "title": "Field Officer", "initials": "GA", "email": "grace@cbi.ngo", "bio": "Grace leads community mobilization and field activities for CBI's programs in Adamawa State.", "order": 9 }
+]

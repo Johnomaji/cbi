@@ -1,0 +1,42 @@
+[
+  {
+    "id": "1",
+    "title": "Annual Partners Conference 2024",
+    "description": "CBI's annual gathering of partners, donors, and stakeholders to review achievements, share learnings, and align on priorities for the year ahead.",
+    "date": "2024-06-15",
+    "time": "9:00 AM",
+    "location": "Transcorp Hilton, Abuja, Nigeria",
+    "type": "Conference",
+    "published": true
+  },
+  {
+    "id": "2",
+    "title": "Community Health Worker Training — Borno State",
+    "description": "A 5-day residential training for 50 community health workers covering primary healthcare delivery, nutrition screening, and referral protocols.",
+    "date": "2024-05-06",
+    "time": "8:00 AM",
+    "location": "Maiduguri, Borno State",
+    "type": "Training",
+    "published": true
+  },
+  {
+    "id": "3",
+    "title": "World Water Day WASH Forum",
+    "description": "CBI hosts a multi-stakeholder forum on the water, sanitation, and hygiene crisis in North-East Nigeria in commemoration of World Water Day.",
+    "date": "2024-03-22",
+    "time": "10:00 AM",
+    "location": "Online & Abuja",
+    "type": "Forum",
+    "published": true
+  },
+  {
+    "id": "4",
+    "title": "Field Volunteer Orientation — Adamawa",
+    "description": "Orientation session for new field volunteers joining CBI's food security and livelihoods program in Adamawa State.",
+    "date": "2024-07-08",
+    "time": "9:00 AM",
+    "location": "Yola, Adamawa State",
+    "type": "Orientation",
+    "published": true
+  }
+]

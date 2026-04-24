@@ -1,0 +1,8 @@
+[
+  { "id": "1", "title": "Education in Emergency", "description": "Safe learning spaces ensuring access to quality education during crises and conflict.", "icon": "BookOpen", "order": 1, "published": true },
+  { "id": "2", "title": "Health", "description": "Primary healthcare services and training for health workers and caregivers.", "icon": "Heart", "order": 2, "published": true },
+  { "id": "3", "title": "Nutrition", "description": "Early identification and treatment of acute malnutrition in children under five.", "icon": "Apple", "order": 3, "published": true },
+  { "id": "4", "title": "WASH", "description": "Safe water access and rehabilitated boreholes for vulnerable communities.", "icon": "Droplets", "order": 4, "published": true },
+  { "id": "5", "title": "Protection / GBV", "description": "Child safeguarding and Gender-Based Violence prevention and response services.", "icon": "ShieldCheck", "order": 5, "published": true },
+  { "id": "6", "title": "Food Security & Livelihoods", "description": "Livelihood support programs building economic resilience and food access.", "icon": "Wheat", "order": 6, "published": true }
+]

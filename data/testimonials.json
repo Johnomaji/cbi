@@ -1,0 +1,6 @@
+[
+  { "id": "1", "quote": "For the past four years, my parents struggled to support me. When CBI gave me a big bag filled with hygiene kits, it was the first time I had ever received such support. I felt seen and valued.", "name": "Fatima Umar", "role": "Beneficiary, Borno State", "initials": "FU", "stars": 5 },
+  { "id": "2", "quote": "Before CBI came to our community, we walked over 5 kilometers every day for water. Today we have a functioning borehole and our children no longer miss school to fetch water.", "name": "Musa Adamu", "role": "Community Leader, Adamawa State", "initials": "MA", "stars": 5 },
+  { "id": "3", "quote": "My son was severely malnourished. The CBI nutrition team enrolled him in the program, and within weeks he was recovering. I am forever grateful for what they did.", "name": "Aisha Ibrahim", "role": "Mother, Yobe State", "initials": "AI", "stars": 5 },
+  { "id": "4", "quote": "CBI trained me as a community health worker and now I serve over 200 families in my village. The knowledge they gave me is a gift I can share for years to come.", "name": "John Bitrus", "role": "Community Health Worker, Plateau State", "initials": "JB", "stars": 5 }
+]

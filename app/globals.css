@@ -1,26 +1,124 @@
 @import "tailwindcss";
 
+/* Use .dark class (not OS preference) for the dark: variant */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ── Semantic theme tokens ───────────────────────────────────
+   ThemeToggle adds class="dark" to <html>.
+   CSS variables switch; Tailwind tokens map to them.
+──────────────────────────────────────────────────────────── */
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bg:          #ffffff;
+  --bg-muted:    #f8fafc;
+  --surface:     #ffffff;
+  --surface-2:   #f1f5f9;
+  --border:      #e2e8f0;
+  --border-2:    #cbd5e1;
+  --fg:          #0f172a;
+  --fg-2:        #475569;
+  --fg-3:        #94a3b8;
+  --fg-inv:      #ffffff;
+}
+
+.dark {
+  --bg:          #0f172a;
+  --bg-muted:    #1e293b;
+  --surface:     #1e293b;
+  --surface-2:   #334155;
+  --border:      #334155;
+  --border-2:    #475569;
+  --fg:          #f1f5f9;
+  --fg-2:        #94a3b8;
+  --fg-3:        #64748b;
+  --fg-inv:      #0f172a;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  /* Brand colours */
+  --color-cbi-blue:       #1d4ed8;
+  --color-cbi-blue-dark:  #1e3a8a;
+  --color-cbi-blue-mid:   #2563eb;
+  --color-cbi-blue-light: #3b82f6;
+  --color-cbi-orange:     #ea580c;
+  --color-cbi-yellow:     #eab308;
+  --color-cbi-yellow-dark:#ca8a04;
+
+  /* Semantic theme tokens – update with .dark automatically */
+  --color-bg:       var(--bg);
+  --color-muted:    var(--bg-muted);
+  --color-surface:  var(--surface);
+  --color-surface2: var(--surface-2);
+  --color-border:   var(--border);
+  --color-border2:  var(--border-2);
+  --color-fg:       var(--fg);
+  --color-fg2:      var(--fg-2);
+  --color-fg3:      var(--fg-3);
+  --color-fginv:    var(--fg-inv);
+
+  --font-sans: var(--font-inter);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+html { scroll-behavior: smooth; }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-inter), system-ui, sans-serif;
 }
+
+/* ── Marquee animation for announcement bar ─────────────── */
+@keyframes marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+}
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* ── Dark mode overrides ─────────────────────────────────────
+   .dark + utility class has higher specificity (0,2,0) than a
+   plain Tailwind utility (0,1,0), so these override without !important.
+   This lets all components respond to dark mode without touching
+   individual files, since none use dark: prefixes.
+──────────────────────────────────────────────────────────── */
+
+/* ── Page / section backgrounds ── */
+.dark .bg-white    { background-color: #1e293b; }
+.dark .bg-slate-50 { background-color: #0f172a; }
+.dark .bg-slate-100 { background-color: #1e293b; }
+.dark .bg-blue-50  { background-color: #162240; }
+
+/* ── Card / hover backgrounds ── */
+.dark .hover\:bg-slate-50:hover  { background-color: #1e293b; }
+.dark .hover\:bg-slate-100:hover { background-color: #334155; }
+.dark .hover\:bg-white:hover     { background-color: #334155; }
+.dark .group:hover .group-hover\:bg-slate-100 { background-color: #334155; }
+
+/* ── Text ── */
+.dark .text-slate-900 { color: #f1f5f9; }
+.dark .text-slate-800 { color: #e2e8f0; }
+.dark .text-slate-700 { color: #cbd5e1; }
+.dark .text-slate-600 { color: #94a3b8; }
+.dark .text-slate-500 { color: #64748b; }
+
+/* ── Borders ── */
+.dark .border-slate-100 { border-color: #334155; }
+.dark .border-slate-200 { border-color: #334155; }
+.dark .border-slate-300 { border-color: #475569; }
+
+/* ── Preserve dark text on yellow brand backgrounds ──
+   Must come AFTER the text-slate-900 override so it wins
+   on elements that have both bg-cbi-yellow and text-slate-900.
+── */
+.dark [class*="bg-cbi-yellow"] { color: #0f172a; }
+
+/* ── Shadows look better deeper on dark backgrounds ── */
+.dark .shadow-sm { box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.4); }
+.dark .shadow     { box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.4), 0 1px 2px -1px rgb(0 0 0 / 0.4); }
+.dark .shadow-md  { box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.5), 0 2px 4px -2px rgb(0 0 0 / 0.5); }
+.dark .shadow-lg  { box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.5), 0 4px 6px -4px rgb(0 0 0 / 0.5); }
+.dark .shadow-xl  { box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.6), 0 8px 10px -6px rgb(0 0 0 / 0.5); }
