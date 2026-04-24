@@ -53,26 +53,26 @@ export default function Stats({ items }: { items: StatItem[] }) {
           <h2 className="text-3xl sm:text-4xl font-black text-white">Measuring What <span className="text-cbi-yellow italic">Matters</span></h2>
         </div>
 
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
           {items.map((stat) => {
             const Icon = iconMap[stat.icon] ?? Users;
             return (
               <div key={stat.id}
-                className="bg-white/10 backdrop-blur-sm rounded-2xl py-10 px-6 text-center group hover:bg-white/15 transition-colors border border-white/10">
+                className="bg-white/10 backdrop-blur-sm rounded-2xl py-7 px-4 sm:py-10 sm:px-6 text-center group hover:bg-white/15 transition-colors border border-white/10">
                 {/* Icon circle */}
-                <div className="w-14 h-14 rounded-full bg-cbi-yellow/20 flex items-center justify-center mx-auto mb-5">
-                  <Icon className="w-6 h-6 text-cbi-yellow" />
+                <div className="w-11 h-11 sm:w-14 sm:h-14 rounded-full bg-cbi-yellow/20 flex items-center justify-center mx-auto mb-4 sm:mb-5">
+                  <Icon className="w-5 h-5 sm:w-6 sm:h-6 text-cbi-yellow" />
                 </div>
 
                 {/* Big number */}
-                <div className="text-4xl sm:text-5xl font-black text-white leading-none mb-2">
+                <div className="text-2xl sm:text-4xl lg:text-5xl font-black text-white leading-none mb-2 break-all">
                   <CountUp end={stat.value} suffix={stat.suffix} />
                 </div>
 
-                <p className="text-blue-200 text-sm font-medium">{stat.label}</p>
+                <p className="text-blue-200 text-xs sm:text-sm font-medium leading-snug">{stat.label}</p>
 
                 {/* Yellow underline */}
-                <div className="mt-4 w-10 h-1 bg-cbi-yellow rounded-full mx-auto" />
+                <div className="mt-3 sm:mt-4 w-8 sm:w-10 h-1 bg-cbi-yellow rounded-full mx-auto" />
               </div>
             );
           })}

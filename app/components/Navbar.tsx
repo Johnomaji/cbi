@@ -64,22 +64,27 @@ export default function Navbar() {
               Home
             </Link>
             {navItems.map((item) => (
-              <div key={item.label} className="relative"
-                onMouseEnter={() => setOpenDropdown(item.label)}
-                onMouseLeave={() => setOpenDropdown(null)}>
+              <div key={item.label} className="relative group">
                 <Link href={item.href}
                   className="flex items-center gap-1 px-4 py-2 text-sm font-semibold text-slate-700 hover:text-cbi-blue transition-colors rounded-full hover:bg-blue-50">
                   {item.label}
-                  {item.children && <ChevronDown className="w-3.5 h-3.5" />}
+                  {item.children && (
+                    <ChevronDown className="w-3.5 h-3.5 transition-transform duration-200 group-hover:rotate-180" />
+                  )}
                 </Link>
-                {item.children && openDropdown === item.label && (
-                  <div className="absolute top-full left-0 w-52 bg-white border border-slate-100 shadow-xl rounded-2xl py-2 z-50 mt-1">
-                    {item.children.map((child) => (
-                      <Link key={child.label} href={child.href}
-                        className="block px-4 py-2.5 text-sm text-slate-600 hover:bg-blue-50 hover:text-cbi-blue transition-colors first:rounded-t-xl last:rounded-b-xl">
-                        {child.label}
-                      </Link>
-                    ))}
+                {item.children && (
+                  <div className="absolute top-full left-0 w-52 pt-1 z-50">
+                    <div className="bg-white border border-slate-100 shadow-xl rounded-2xl py-2
+                                    invisible opacity-0 translate-y-1
+                                    group-hover:visible group-hover:opacity-100 group-hover:translate-y-0
+                                    transition-all duration-200">
+                      {item.children.map((child) => (
+                        <Link key={child.label} href={child.href}
+                          className="block px-4 py-2.5 text-sm text-slate-600 hover:bg-blue-50 hover:text-cbi-blue transition-colors first:rounded-t-xl last:rounded-b-xl">
+                          {child.label}
+                        </Link>
+                      ))}
+                    </div>
                   </div>
                 )}
               </div>
