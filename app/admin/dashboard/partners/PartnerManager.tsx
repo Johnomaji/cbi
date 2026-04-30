@@ -53,7 +53,7 @@ export default function PartnerManager({ partners }: { partners: Partner[] }) {
             {editing ? <Pencil className="w-4 h-4 text-cbi-yellow" /> : <Plus className="w-4 h-4 text-blue-400" />}
             {editing ? "Edit Partner" : "Add Partner"}
           </h2>
-          <PartnerForm initial={editing} nextOrder={partners.length + 1} onDone={handleDone} />
+          <PartnerForm key={editing?.id ?? "new"} initial={editing} nextOrder={partners.length + 1} onDone={handleDone} />
         </div>
       </div>
     </div>

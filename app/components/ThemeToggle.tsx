@@ -1,21 +1,17 @@
 "use client";
 
 import { Sun, Moon } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 const STORAGE_KEY = "cbi-theme";
 
 export default function ThemeToggle() {
-  const [isDark, setIsDark] = useState(false);
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
+  const [isDark, setIsDark] = useState(() => {
+    if (typeof window === "undefined") return false;
     const saved = localStorage.getItem(STORAGE_KEY);
-    const dark = saved === "dark";
-    setIsDark(dark);
-    document.documentElement.classList.toggle("dark", dark);
-    setMounted(true);
-  }, []);
+    if (saved) return saved === "dark";
+    return document.documentElement.classList.contains("dark");
+  });
 
   function toggle() {
     const next = !isDark;
@@ -23,8 +19,6 @@ export default function ThemeToggle() {
     localStorage.setItem(STORAGE_KEY, next ? "dark" : "light");
     document.documentElement.classList.toggle("dark", next);
   }
-
-  if (!mounted) return <div className="w-8 h-8" />;
 
   return (
     <button

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { upsertProgram } from "@/lib/actions";
 import type { Program } from "@/lib/data";
 
@@ -10,8 +10,6 @@ const EMPTY: Omit<Program, "id"> = { title: "", description: "", icon: "Heart", 
 export default function ProgramForm({ initial, nextOrder, onDone }: { initial?: Program | null; nextOrder: number; onDone?: () => void }) {
   const [form, setForm] = useState<Omit<Program, "id"> & { id?: string }>(initial ?? { ...EMPTY, order: nextOrder });
   const [loading, setLoading] = useState(false);
-
-  useEffect(() => { setForm(initial ?? { ...EMPTY, order: nextOrder }); }, [initial, nextOrder]);
 
   function set(field: string, value: string | number | boolean) {
     setForm((f) => ({ ...f, [field]: value }));

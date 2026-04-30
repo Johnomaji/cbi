@@ -62,7 +62,7 @@ export default function CareerManager({ careers }: { careers: CareerOpening[] })
             {editing ? <Pencil className="w-4 h-4 text-cbi-yellow" /> : <Plus className="w-4 h-4 text-blue-400" />}
             {editing ? "Edit Opening" : "Add Opening"}
           </h2>
-          <CareerForm initial={editing} onDone={handleDone} />
+          <CareerForm key={editing?.id ?? "new"} initial={editing} onDone={handleDone} />
         </div>
       </div>
     </div>

@@ -57,7 +57,7 @@ export default function TestimonialManager({ testimonials }: { testimonials: Tes
             {editing ? <Pencil className="w-4 h-4 text-cbi-yellow" /> : <Plus className="w-4 h-4 text-blue-400" />}
             {editing ? "Edit Testimonial" : "Add Testimonial"}
           </h2>
-          <TestimonialForm initial={editing} onDone={handleDone} />
+          <TestimonialForm key={editing?.id ?? "new"} initial={editing} onDone={handleDone} />
         </div>
       </div>
     </div>

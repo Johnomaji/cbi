@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { upsertPost } from "@/lib/actions";
 import type { Post } from "@/lib/data";
 
@@ -13,10 +13,6 @@ const EMPTY = {
 export default function BlogForm({ initial, onDone }: { initial?: Post | null; onDone?: () => void }) {
   const [form, setForm] = useState<Omit<Post, "id"> & { id?: string }>(initial ?? EMPTY);
   const [loading, setLoading] = useState(false);
-
-  useEffect(() => {
-    setForm(initial ?? EMPTY);
-  }, [initial]);
 
   function set(field: string, value: string | boolean) {
     setForm((f) => ({ ...f, [field]: value }));

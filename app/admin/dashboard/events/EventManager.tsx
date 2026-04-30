@@ -77,7 +77,7 @@ export default function EventManager({ events }: { events: Event[] }) {
             {editing ? <Pencil className="w-4 h-4 text-cbi-yellow" /> : <Plus className="w-4 h-4 text-purple-400" />}
             {editing ? `Editing: ${editing.title.slice(0, 28)}…` : "Add Event"}
           </h2>
-          <EventForm initial={editing} onDone={handleDone} />
+          <EventForm key={editing?.id ?? "new"} initial={editing} onDone={handleDone} />
         </div>
       </div>
     </div>

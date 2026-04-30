@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { upsertGalleryItem } from "@/lib/actions";
 import type { GalleryItem } from "@/lib/data";
 
@@ -9,8 +9,6 @@ const EMPTY: Omit<GalleryItem, "id"> = { title: "", caption: "", category: "Prog
 export default function GalleryForm({ initial, onDone }: { initial?: GalleryItem | null; onDone?: () => void }) {
   const [form, setForm] = useState<Omit<GalleryItem, "id"> & { id?: string }>(initial ?? EMPTY);
   const [loading, setLoading] = useState(false);
-
-  useEffect(() => { setForm(initial ?? EMPTY); }, [initial]);
 
   function set(field: string, value: string) {
     setForm((f) => ({ ...f, [field]: value }));

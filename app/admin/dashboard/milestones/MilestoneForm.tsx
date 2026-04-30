@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { upsertMilestone } from "@/lib/actions";
 import type { Milestone } from "@/lib/data";
 
@@ -9,8 +9,6 @@ const EMPTY: Omit<Milestone, "id"> = { year: "", title: "", desc: "", order: 1 }
 export default function MilestoneForm({ initial, nextOrder, onDone }: { initial?: Milestone | null; nextOrder: number; onDone?: () => void }) {
   const [form, setForm] = useState<Omit<Milestone, "id"> & { id?: string }>(initial ?? { ...EMPTY, order: nextOrder });
   const [loading, setLoading] = useState(false);
-
-  useEffect(() => { setForm(initial ?? { ...EMPTY, order: nextOrder }); }, [initial, nextOrder]);
 
   function set(field: string, value: string | number) {
     setForm((f) => ({ ...f, [field]: value }));

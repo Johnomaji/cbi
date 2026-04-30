@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { deleteGalleryItem } from "@/lib/actions";
-import { Pencil, Trash2, Plus, Image } from "lucide-react";
+import { Pencil, Trash2, Plus, Image as ImageIcon } from "lucide-react";
 import type { GalleryItem } from "@/lib/data";
 import GalleryForm from "./GalleryForm";
 
@@ -26,7 +26,7 @@ export default function GalleryManager({ items }: { items: GalleryItem[] }) {
       <div className="lg:col-span-3">
         <div className="bg-slate-800 rounded-2xl border border-slate-700">
           <div className="p-5 border-b border-slate-700 flex items-center gap-2">
-            <Image className="w-4 h-4 text-pink-400" />
+            <ImageIcon className="w-4 h-4 text-pink-400" />
             <h2 className="font-semibold text-white">Gallery Items</h2>
             <span className="ml-auto text-xs bg-slate-700 text-slate-400 px-2 py-0.5 rounded-full">
               {items.length} total
@@ -68,7 +68,7 @@ export default function GalleryManager({ items }: { items: GalleryItem[] }) {
             {editing ? <Pencil className="w-4 h-4 text-cbi-yellow" /> : <Plus className="w-4 h-4 text-pink-400" />}
             {editing ? `Editing: ${editing.title.slice(0, 28)}` : "Add Gallery Item"}
           </h2>
-          <GalleryForm initial={editing} onDone={handleDone} />
+          <GalleryForm key={editing?.id ?? "new"} initial={editing} onDone={handleDone} />
         </div>
       </div>
     </div>

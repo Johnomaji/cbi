@@ -62,7 +62,7 @@ export default function ProgramManager({ programs }: { programs: Program[] }) {
             {editing ? <Pencil className="w-4 h-4 text-cbi-yellow" /> : <Plus className="w-4 h-4 text-blue-400" />}
             {editing ? "Edit Program" : "Add Program"}
           </h2>
-          <ProgramForm initial={editing} nextOrder={programs.length + 1} onDone={handleDone} />
+          <ProgramForm key={editing?.id ?? "new"} initial={editing} nextOrder={programs.length + 1} onDone={handleDone} />
         </div>
       </div>
     </div>

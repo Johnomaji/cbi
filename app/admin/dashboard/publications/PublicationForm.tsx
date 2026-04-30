@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { upsertPublication } from "@/lib/actions";
 import type { Publication } from "@/lib/data";
 
@@ -9,8 +9,6 @@ const EMPTY = { title: "", description: "", type: "Report", date: new Date().toI
 export default function PublicationForm({ initial, onDone }: { initial?: Publication | null; onDone?: () => void }) {
   const [form, setForm] = useState<Omit<Publication, "id"> & { id?: string }>(initial ?? EMPTY);
   const [loading, setLoading] = useState(false);
-
-  useEffect(() => { setForm(initial ?? EMPTY); }, [initial]);
 
   function set(field: string, value: string | boolean) {
     setForm((f) => ({ ...f, [field]: value }));

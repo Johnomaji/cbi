@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Providers from "./providers";
 import AnnouncementBar from "./components/AnnouncementBar";
+import ChatbotWidget from "./components/ChatbotWidget";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -30,6 +31,7 @@ export default function RootLayout({
         <Providers>
           <AnnouncementBar />
           {children}
+          <ChatbotWidget />
         </Providers>
       </body>
     </html>

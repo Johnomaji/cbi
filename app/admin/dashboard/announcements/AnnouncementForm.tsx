@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { upsertAnnouncement } from "@/lib/actions";
 import type { Announcement } from "@/lib/data";
 
@@ -9,8 +9,6 @@ const EMPTY = { text: "", link: "", linkText: "", active: true };
 export default function AnnouncementForm({ initial, onDone }: { initial?: Announcement | null; onDone?: () => void }) {
   const [form, setForm] = useState<Omit<Announcement, "id"> & { id?: string }>(initial ?? EMPTY);
   const [loading, setLoading] = useState(false);
-
-  useEffect(() => { setForm(initial ?? EMPTY); }, [initial]);
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();

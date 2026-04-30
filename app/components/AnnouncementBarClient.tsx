@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Link from "next/link";
 import { Megaphone, X } from "lucide-react";
 import type { Announcement } from "@/lib/data";
@@ -10,12 +10,10 @@ interface Props {
 }
 
 export default function AnnouncementBarClient({ items, dismissKey }: Props) {
-  const [visible, setVisible] = useState(false);
-
-  useEffect(() => {
-    const saved = localStorage.getItem("ann_dismissed");
-    if (saved !== dismissKey) setVisible(true);
-  }, [dismissKey]);
+  const [visible, setVisible] = useState(() => {
+    if (typeof window === "undefined") return false;
+    return localStorage.getItem("ann_dismissed") !== dismissKey;
+  });
 
   function dismiss() {
     localStorage.setItem("ann_dismissed", dismissKey);

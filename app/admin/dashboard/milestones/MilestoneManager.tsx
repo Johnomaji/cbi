@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { deleteMilestone, upsertMilestone } from "@/lib/actions";
+import { deleteMilestone } from "@/lib/actions";
 import { Pencil, Trash2, Plus, Clock } from "lucide-react";
 import type { Milestone } from "@/lib/data";
 import MilestoneForm from "./MilestoneForm";
@@ -56,7 +56,7 @@ export default function MilestoneManager({ milestones }: { milestones: Milestone
             {editing ? <Pencil className="w-4 h-4 text-cbi-yellow" /> : <Plus className="w-4 h-4 text-blue-400" />}
             {editing ? "Edit Milestone" : "Add Milestone"}
           </h2>
-          <MilestoneForm initial={editing} nextOrder={milestones.length + 1} onDone={handleDone} />
+          <MilestoneForm key={editing?.id ?? "new"} initial={editing} nextOrder={milestones.length + 1} onDone={handleDone} />
         </div>
       </div>
     </div>

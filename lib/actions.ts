@@ -14,7 +14,7 @@ import {
   getTestimonials, saveTestimonials,
   getPartners, savePartners,
   getCareers, saveCareers,
-  getSiteSettings, saveSiteSettings,
+  saveSiteSettings,
   type Announcement, type Post, type Event, type TeamMember,
   type StatItem, type GalleryItem, type Publication,
   type Program, type Milestone, type Testimonial, type Partner,

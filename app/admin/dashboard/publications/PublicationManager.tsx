@@ -83,7 +83,7 @@ export default function PublicationManager({ publications }: { publications: Pub
             {editing ? <Pencil className="w-4 h-4 text-cbi-yellow" /> : <Plus className="w-4 h-4 text-teal-400" />}
             {editing ? `Editing: ${editing.title.slice(0, 28)}` : "Add Publication"}
           </h2>
-          <PublicationForm initial={editing} onDone={handleDone} />
+          <PublicationForm key={editing?.id ?? "new"} initial={editing} onDone={handleDone} />
         </div>
       </div>
     </div>

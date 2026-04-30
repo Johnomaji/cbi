@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { upsertTestimonial } from "@/lib/actions";
 import type { Testimonial } from "@/lib/data";
 
@@ -9,8 +9,6 @@ const EMPTY: Omit<Testimonial, "id"> = { quote: "", name: "", role: "", initials
 export default function TestimonialForm({ initial, onDone }: { initial?: Testimonial | null; onDone?: () => void }) {
   const [form, setForm] = useState<Omit<Testimonial, "id"> & { id?: string }>(initial ?? EMPTY);
   const [loading, setLoading] = useState(false);
-
-  useEffect(() => { setForm(initial ?? EMPTY); }, [initial]);
 
   function set(field: string, value: string | number) {
     setForm((f) => ({ ...f, [field]: value }));

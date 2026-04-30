@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { upsertCareer } from "@/lib/actions";
 import type { CareerOpening } from "@/lib/data";
 
@@ -12,8 +12,6 @@ const EMPTY: Omit<CareerOpening, "id"> = {
 export default function CareerForm({ initial, onDone }: { initial?: CareerOpening | null; onDone?: () => void }) {
   const [form, setForm] = useState<Omit<CareerOpening, "id"> & { id?: string }>(initial ?? EMPTY);
   const [loading, setLoading] = useState(false);
-
-  useEffect(() => { setForm(initial ?? EMPTY); }, [initial]);
 
   function set(field: string, value: string | boolean) {
     setForm((f) => ({ ...f, [field]: value }));

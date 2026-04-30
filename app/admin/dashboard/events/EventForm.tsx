@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { upsertEvent } from "@/lib/actions";
 import type { Event } from "@/lib/data";
 
@@ -9,8 +9,6 @@ const EMPTY = { title: "", description: "", date: "", time: "9:00 AM", location:
 export default function EventForm({ initial, onDone }: { initial?: Event | null; onDone?: () => void }) {
   const [form, setForm] = useState<Omit<Event, "id"> & { id?: string }>(initial ?? EMPTY);
   const [loading, setLoading] = useState(false);
-
-  useEffect(() => { setForm(initial ?? EMPTY); }, [initial]);
 
   function set(field: string, value: string | boolean) {
     setForm((f) => ({ ...f, [field]: value }));

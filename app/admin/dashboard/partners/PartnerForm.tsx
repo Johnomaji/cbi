@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { upsertPartner } from "@/lib/actions";
 import type { Partner } from "@/lib/data";
 
@@ -9,8 +9,6 @@ const EMPTY: Omit<Partner, "id"> = { name: "", logoUrl: "", order: 1 };
 export default function PartnerForm({ initial, nextOrder, onDone }: { initial?: Partner | null; nextOrder: number; onDone?: () => void }) {
   const [form, setForm] = useState<Omit<Partner, "id"> & { id?: string }>(initial ?? { ...EMPTY, order: nextOrder });
   const [loading, setLoading] = useState(false);
-
-  useEffect(() => { setForm(initial ?? { ...EMPTY, order: nextOrder }); }, [initial, nextOrder]);
 
   function set(field: string, value: string | number) {
     setForm((f) => ({ ...f, [field]: value }));

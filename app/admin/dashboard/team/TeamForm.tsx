@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { upsertTeamMember } from "@/lib/actions";
 import type { TeamMember } from "@/lib/data";
 
@@ -9,8 +9,6 @@ const EMPTY = (nextOrder: number) => ({ name: "", title: "", initials: "", email
 export default function TeamForm({ nextOrder, initial, onDone }: { nextOrder: number; initial?: TeamMember | null; onDone?: () => void }) {
   const [form, setForm] = useState<Omit<TeamMember, "id"> & { id?: string }>(initial ?? EMPTY(nextOrder));
   const [loading, setLoading] = useState(false);
-
-  useEffect(() => { setForm(initial ?? EMPTY(nextOrder)); }, [initial, nextOrder]);
 
   function set(field: string, value: string | number) {
     setForm((f) => ({ ...f, [field]: value }));

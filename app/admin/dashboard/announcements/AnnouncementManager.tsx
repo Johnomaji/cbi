@@ -76,7 +76,7 @@ export default function AnnouncementManager({ announcements }: { announcements: 
             {editing ? <Pencil className="w-4 h-4 text-cbi-yellow" /> : <Plus className="w-4 h-4 text-blue-400" />}
             {editing ? "Edit Announcement" : "Add Announcement"}
           </h2>
-          <AnnouncementForm initial={editing} onDone={handleDone} />
+          <AnnouncementForm key={editing?.id ?? "new"} initial={editing} onDone={handleDone} />
         </div>
       </div>
     </div>

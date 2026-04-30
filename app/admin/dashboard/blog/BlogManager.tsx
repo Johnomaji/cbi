@@ -84,7 +84,7 @@ export default function BlogManager({ posts }: { posts: Post[] }) {
             {editing ? <Pencil className="w-4 h-4 text-cbi-yellow" /> : <Plus className="w-4 h-4 text-green-400" />}
             {editing ? `Editing: ${editing.title.slice(0, 30)}…` : "New Post"}
           </h2>
-          <BlogForm initial={editing} onDone={handleDone} />
+          <BlogForm key={editing?.id ?? "new"} initial={editing} onDone={handleDone} />
         </div>
       </div>
     </div>

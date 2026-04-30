@@ -69,7 +69,7 @@ export default function TeamManager({ team }: { team: TeamMember[] }) {
             {editing ? <Pencil className="w-4 h-4 text-cbi-yellow" /> : <Plus className="w-4 h-4 text-amber-400" />}
             {editing ? `Editing: ${editing.name}` : "Add Member"}
           </h2>
-          <TeamForm nextOrder={team.length + 1} initial={editing} onDone={handleDone} />
+          <TeamForm key={editing?.id ?? "new"} nextOrder={team.length + 1} initial={editing} onDone={handleDone} />
         </div>
       </div>
     </div>
